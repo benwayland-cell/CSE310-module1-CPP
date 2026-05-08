@@ -13,7 +13,8 @@ int main() {
 
     // cout << (rand() % 100);
     string input;
-    cin >> input;
+    getline(cin, input);
+    cout << "Input: " << input << "\n";
     DieRoll testDieRoll(input);
 
     cout << "Die Rolls" << "\n";

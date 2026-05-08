@@ -8,11 +8,12 @@
 using namespace std;
 
 
-// public:
 DieRoll::DieRoll(string input) {
     int dieNumber = INT_MIN;
     int dieSize = INT_MIN;
     bool dieNumberChosen = false;
+
+    cout << "Building Die: ";
 
     // loop through every character
     for (int inputIndex = 0; inputIndex < input.size(); ++inputIndex) {
@@ -44,12 +45,15 @@ DieRoll::DieRoll(string input) {
                 DieRoll::diceVector.push_back([dieSize](){return (rand() % dieSize) + 1;});
                 addDieToProbabilityMap(dieSize);
             }
-
+            
+            cout << dieNumber << "d" << dieSize << " ";
             dieNumber = INT_MIN;
             dieSize = INT_MIN;
             dieNumberChosen = false;
         }
     }
+
+    cout << "\n";
 }
 
 int DieRoll::roll() {
@@ -77,9 +81,6 @@ void DieRoll::printProbabilityMap() {
         cout << probMapKey << (": " + roundPercent + "\n");
     }
 }
-
-// private:
-
 
 
 // Returns the keys of probabilityMap
