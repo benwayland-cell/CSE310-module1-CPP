@@ -1,0 +1,11 @@
+# Build output
+build/
+
+# MSVC leftover files (if any end up in the root)
+*.exe
+*.obj
+*.ilk
+*.pdb
+
+# VSCode settings (optional - some people do commit these)
+.vscode/
